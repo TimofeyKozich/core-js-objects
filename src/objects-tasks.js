@@ -235,7 +235,7 @@ function Rectangle(width, height) {
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(obj) {
-  return obj;
+  return JSON.stringify(obj);
 }
 
 /**
