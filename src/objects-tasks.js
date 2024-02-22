@@ -111,7 +111,7 @@ function compareObjects(obj1, obj2) {
  *    isEmptyObject({a: 1}) => false
  */
 function isEmptyObject(obj) {
-  return obj;
+  return Object.keys(obj).length === 0;
 }
 
 /**
