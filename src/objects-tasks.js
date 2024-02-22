@@ -250,7 +250,9 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-  return [proto, json];
+  const obj = JSON.parse(json);
+  const target = Object.create(proto);
+  return Object.assign(target, obj);
 }
 
 /**
