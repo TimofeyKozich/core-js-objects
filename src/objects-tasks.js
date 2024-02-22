@@ -131,7 +131,7 @@ function isEmptyObject(obj) {
  *    console.log(immutableObj) => {a: 1, b: 2}
  */
 function makeImmutable(obj) {
-  return obj;
+  return Object.freeze(obj);
 }
 
 /**
