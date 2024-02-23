@@ -324,7 +324,19 @@ function sortCitiesArray(arr) {
  *   }
  */
 function group(array, keySelector, valueSelector) {
-  return [array, keySelector, valueSelector];
+  const map = new Map();
+  array.forEach((obj) => {
+    const key = keySelector(obj);
+    const value = valueSelector(obj);
+    if (map.has(key)) {
+      const newValue = [...map.get(key), value];
+      map.set(key, newValue);
+    } else {
+      map.set(key, [value]);
+    }
+  });
+
+  return map;
 }
 
 /**
